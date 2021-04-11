@@ -69,7 +69,7 @@
 					</div>
 				<?php } ?>
 				<div class="input-row">
-                    <button type="submit" id="submit" name="questionSubmit" class="btn-submit"><?php echo isset($question_name) ? $question_name . '? ' : ' ';?></button>
+                    <button type="submit" id="submit" name="questionSubmit" class="btn btn-success"><?php echo isset($question_name) ? $question_name . '? ' : ' ';?></button>
                 </div>
 
             </form>
