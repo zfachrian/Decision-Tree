@@ -1,0 +1,1 @@
+{"heading":{"1":"Outlook","2":"Temperature","3":"Humidity","4":"Wind","5":"Playtennis"},"algorithm":{"Outlook":{"Sunny":{"Humidity":{"High":"No","Normal":"Yes"}},"Overcast":"Yes","Rain":{"Wind":{"Weak":"Yes","Strong":"No"}}}}}
