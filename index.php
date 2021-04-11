@@ -1,4 +1,7 @@
 <?php
+// Turn off all error reporting
+error_reporting(0);
+
 // initial variable declare
 $heading = [];
 $dataset = [];
@@ -176,8 +179,11 @@ if (isset($_POST["import"])) {
 <head>
 <title> Machine Learning </title>
 <script src="jquery-3.2.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="style.css" media="all" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 <script type="text/javascript">
+
 $(document).ready(function() {
     $("#frmCSVImport").on("submit", function () {
 
@@ -198,27 +204,28 @@ $(document).ready(function() {
 </head>
 
 <body>
-    <h2>Please Upload Traning Data set in CSV file format using PHP</h2>
+    <h1 class="text-center">Decision Tree Implementation</h1>
+    <h5 class="text-center">Zuhad Achmad Fachrian - 3120640004</h5>
     
     <div id="response" class="<?php if(!empty($type)) { echo $type . " display-block"; } ?>"><?php if(!empty($message)) { echo $message; } ?></div>
     <div class="outer-scontainer-left">
         <div class="row">
-
-            <form class="form-horizontal" action="" method="post"
-                name="frmCSVImport" id="frmCSVImport" enctype="multipart/form-data">
-                <div class="input-row">
-                    <label class="col-md-4 control-label">Choose CSV
-                        File</label> <input type="file" name="file"
-                        id="file" accept=".csv">
-                    <button type="submit" id="submit" name="import"
-                        class="btn-submit">Process</button>&nbsp;&nbsp;
-					<?php if(file_exists("desicion_alogrithm.json")):?>	
-						<a href="algorithm_test.php" target="_blank">Algorithm Test</a>	
-					<?php endif;?>	
-                    <br />
-
-                </div>
-
+            <form class="form-horizontal" action="" method="post" name="frmCSVImport" id="frmCSVImport" enctype="multipart/form-data">
+				<div class="mb-3">
+					<label for="formFile" class="form-label">Upload File Dataset (.csv)</label>
+					<input class="form-control" type="file" name="file" id="file" accept=".csv"">
+					<br>
+					<button type="submit" id="submit" name="import" class="btn btn-primary">Process Dataset</button>&nbsp;&nbsp;
+					<?php 
+					if(file_exists("desicion_alogrithm.json")){
+					?>
+						<button class="btn btn-success"><a href="algorithm_test.php" class="text-white" target="_blank">Algorithm Test</a>	</button>
+					<?php }?>
+		
+				</div>
+				<div>
+					
+				</div>
             </form>
 
         </div>
